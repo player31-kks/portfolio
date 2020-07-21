@@ -11,10 +11,41 @@
     <script src="https://kit.fontawesome.com/f2c869eb3d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- defer를 사용하는 것이 매우 중요하다. fetching 시간과 executing 작업 시간에 따라서 달라지기 때문에 -->
     <script src="main.js" defer></script>
 </head>
 
 <body>
+    <!-- BEM규칙을 따라보자 -->
+    <!-- Block Element Modifier -->
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbar__log">
+            <i></i>
+            <a href="">Kyo</a>
+        </div>
+        <div class="navbar__menu">
+            <ul class="navbar__menu">
+                <li class="navbar__item">Home</li>
+                <li class="navbar__item">About</li>
+                <li class="navbar__item">Skills</li>
+                <li class="navbar__item">My work</li>
+                <li class="navbar__item">Testimonials</li>
+                <li class="navbar__item">Contact</li>
+            </ul>
+        </div>
+    </nav>
+    <!-- about -->
+    <section id="about"></section>
+    <!-- Skills -->
+    <section id="skills"></section>
+    <!-- Work -->
+    <section id="work"></section>
+    <!-- testimonials -->
+    <section id="testimonials"></section>
+    <!-- contact -->
+    <section id="contact"></section>
 
 </body>
 
