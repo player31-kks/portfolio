@@ -28,6 +28,7 @@
 
     /* Size */
     --size-border-radius :4px;
+    --base-Margin :15px;
 }
   /* Typography */
 
@@ -44,6 +45,14 @@ ul{
     list-style: none;
     /* ul 에는 기본적으로 패딩을 가지고 있다. 그래서 패딩을 없애주자 */
     padding-left: 0;
+}
+
+button{
+    /* 버튼의 기본 */
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 h1 {
@@ -73,17 +82,12 @@ p {
     color: var(--color-black);
     margin: 4px 0;
 }
-img{
-    width: 100px;
-    height: 100px;
-}
-
 /* Navbar Styling*/
 #navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-pink);
+    background-color: #e84393;
     color: white;
     padding: 16px;
 }
@@ -93,6 +97,9 @@ img{
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
 
+}
+.navbar__log img{
+    width: 100px;
 }
 .navbar__menu{
     display: flex;
@@ -111,4 +118,35 @@ img{
 }
 .navbar__item.active{
     border: 1px solid var(--color-white);
+}
+
+/* Home Styling */
+#Home{
+    /* background의 사용방법 center/cover no-repeat  반응형으로 만들기*/
+    background:url(img/background.png) center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#Home>img{
+    margin: var(--base-Margin) 0px;
+    border-radius: 100%;
+}
+
+.Home__title,
+.Home__description{
+    color: var(--color-white);
+    margin: var(--base-Margin) 0px;
+}
+
+.Home__contact{
+    color: white;
+    border-radius: var(--size-border-radius);
+    border: 2px solid var(--color-light-white);
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    margin: var(--base-Margin) 0px;
+    padding: 8px 12px;
 }
