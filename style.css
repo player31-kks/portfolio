@@ -25,8 +25,27 @@
     --weight-bold: 700;
     --weight-semi-bold: 600;
     --weight-regular: 400;
+
+    /* Size */
+    --size-border-radius :4px;
 }
   /* Typography */
+
+body{
+    margin: 0;
+    font-family: 'Open Sans';
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+ul{
+    list-style: none;
+    /* ul 에는 기본적으로 패딩을 가지고 있다. 그래서 패딩을 없애주자 */
+    padding-left: 0;
+}
+
 h1 {
     font-size: var(--font-large);
     font-weight: var(--weight-bold);
@@ -53,4 +72,43 @@ p {
     font-weight: var(--weight-regular);
     color: var(--color-black);
     margin: 4px 0;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+
+/* Navbar Styling*/
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-pink);
+    color: white;
+    padding: 16px;
+}
+.navbar__log{
+    display: flex;
+    align-items: center;
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+
+}
+.navbar__menu{
+    display: flex;
+
+}
+.navbar__item:hover{
+    background-color: var(--color-dark-pink);
+    /* transition: all 1s ease; */
+
+}
+.navbar__item{
+    padding: 8px 12px;
+    margin: 0px 4px;
+    cursor: pointer;
+    border-radius: var(--size-border-radius);
+}
+.navbar__item.active{
+    border: 1px solid var(--color-white);
 }
