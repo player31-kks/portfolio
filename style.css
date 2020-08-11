@@ -29,6 +29,9 @@
     /* Size */
     --size-border-radius :4px;
     --base-Margin :15px;
+
+    /* Annimation  */
+    --animation-duration: 300ms;
 }
   /* Typography */
 
@@ -149,4 +152,76 @@ p {
     font-weight: var(--weight-bold);
     margin: var(--base-Margin) 0px;
     padding: 8px 12px;
+}
+/* Section Common */
+.section{
+    padding:50px;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* About Me Styling */
+
+.about__majors{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin: 80px 0;
+}
+.major{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
+}
+
+.major__icon i:hover{
+    color: var(--color-pink);
+    transform: rotate(-30deg) scale(1.1);
+}
+.major__icon i{
+    transition: all var(--animation-duration) ease;
+}
+
+.major__icon{
+    /* 아이콘만 동그라미를 그리는 방법  */
+    width: 170px;
+    height: 170px;
+    font-size: 70px;
+    line-height: 170px;
+    margin: auto;
+    color: var(--color-blue);
+    border: 2px solid var(--color-blue);
+    margin-bottom: 16px;
+    border-radius: 50%;
+}
+
+
+.about__school{
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+}
+.school{
+    display: flex;
+    align-items: center;
+}
+.school__log{
+    width: 100px;
+}
+.school__description{
+    text-align: left;
+}
+.school_name,.school__period{
+    color:var(--color-dark-grey);
+}
+
+.school_name{
+    font-size: var(--font-small);
+}
+.school__period{
+    font-size: var(--font-micro);
 }
