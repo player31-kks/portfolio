@@ -280,3 +280,105 @@ p {
 .etc{
     background-color: var(--color-light-grey);
 }
+
+/* -----------------My Work Styling ------------------*/
+.work__categories{
+    margin: 40px;
+}
+
+.categories__btn{
+    border: 1px solid var(--color-dark-white);
+    border-radius: var(--size-border-radius);
+    font-size: var(--font-regular);
+    padding: 8px 48px;
+
+}
+.categories__btn.active,
+.categories__btn:hover{
+    background-color: var(--color-pink);
+    color: var(--color-white);
+}
+
+
+.categories__btn.active .category__count,
+.categories__btn:hover .category__count{
+    opacity: 1;
+    top:0
+}
+.category__count{
+    background-color: var(--color-orange);
+    color: var(--color-light-white);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    line-height: 24px;
+    /* 프로젝트하면서 relative 처음 써봄 */
+    position: relative;
+    top:-20px;
+    left: 4px;
+    opacity: 0;
+    transition: all var(--animation-duration) ease-in;
+}
+
+.work__projects{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project{
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: var(--base-Margin);
+    background-color: var(--color-light-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project__img{
+    /* 그림이 자신의 통안에서만 커질수 있게 하기위함이다.  */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 복습해야할 부분 */
+.project__description{
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    /* 밑에서 올라오게 하기 위해서 */
+    transform: translateY(10px);
+    transition: all var(--animation-duration) ease-in;
+}
+/* 프로젝트에 올라왔을 때 project__description이  */
+.project:hover .project__description{
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+
+.project__description h3{
+    color:var(--color-white)
+}
+/* 줄넣기 이건 처음해보는것 */
+/* h3에 다음에 선 넣기  */
+.project__description h3::after{
+    display: block;
+    content: '';
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-white);
+    position: relative;
+    left: 50%;
+    margin-left: -12px;
+    margin-top: 8px;
+}
