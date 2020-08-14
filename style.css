@@ -124,6 +124,16 @@ p {
     border: 1px solid var(--color-white);
 }
 
+.navbar__togleBtn{
+    /* display: none; */
+    position: absolute;
+    right: 32px;
+    font-size: 32px;
+    top: 46px;
+    color: var(--color-white);
+    display: none;
+}
+
 /* Home Styling */
 #Home{
     /* background의 사용방법 center/cover no-repeat  반응형으로 만들기*/
@@ -406,4 +416,34 @@ p {
 .contact__links i:hover{
     transform: scale(1.1);
     color: var(--color-yellow);
+}
+
+@media screen and (max-width:768px){
+    .navbar__togleBtn{
+        display: block;
+    }
+    #navbar{
+        flex-direction: column;
+    }
+    .navbar__log{
+        align-self: flex-start;
+    }
+    .navbar__menu{
+        flex-direction: column;
+        display: none;
+    }
+    .about__majors{
+        flex-direction: column;
+        align-items: center;
+    }
+    .major{
+        margin: var(--base-Margin);
+    }
+    .skillset{
+        flex-direction: column;
+    }
+    .project{
+        /* 이부분 공부하기 아직 flex-grow랑 shrink잘 모름 */
+        flex-grow: 1;
+    }
 }
