@@ -88,13 +88,23 @@ p {
 }
 /* Navbar Styling*/
 #navbar{
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e84393;
+    /* background-color: #e84393; */
+    background-color: transparent;
     color: white;
     padding: 16px;
+    transition: all var(--animation-duration) ease-in;
 }
+
+#navbar.navbar--dark{
+    background-color: #e84393;
+    padding: 8px;
+}
+
 .navbar__log{
     display: flex;
     align-items: center;
@@ -143,6 +153,7 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-top: 100px;
 }
 #Home>img{
     margin: var(--base-Margin) 0px;
