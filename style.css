@@ -104,7 +104,7 @@ p {
 }
 
 #navbar.navbar--dark{
-    background-color: #e84393;
+    background-color: #D980FA;
     padding: 8px;
 }
 
@@ -411,7 +411,7 @@ p {
 
 /* -----------------contact Styling----------------- */
 #contact{
-    background-color: #e84393;
+    background-color: #D980FA;
 }
 .contact__title,
 .contact__email,

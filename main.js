@@ -11,7 +11,6 @@ document.addEventListener('scroll',(event) =>{
     }
 })
 
-
 //이방법은 좋지 않다 딱봐도 몰라서 하는게 티가남
 //각각의 동일한 class말고 
 /*
@@ -47,3 +46,11 @@ const contactBtn = document.querySelector(".Home__contact")
 contactBtn.addEventListener('click',scrollIntoView)
 
 
+//3. HOME 화면 점점 투명하게 만들기
+const Home = document.querySelector(".Home__container")
+const Homeheight = Home.getBoundingClientRect().height
+document.addEventListener('scroll',event =>{
+    const size = window.scrollY
+    const opacity = 1-(size/Homeheight)
+    Home.style.opacity = opacity
+})
