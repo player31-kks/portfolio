@@ -36,6 +36,8 @@ function scrollIntoView(event){
     const postionName = event.target.dataset.link
     const postion = document.querySelector(postionName)
     postion.scrollIntoView({behavior: "smooth", block: "start", inline: "start"} );
+    navbarMenu.classList.remove("active")
+    navbarulMenu.classList.remove("active")
 }
 
 const navbarMenu = document.querySelector(".navbar__menu");
@@ -104,4 +106,14 @@ const navbarItem = document.querySelectorAll(".navbar__item")
 navbarMenu.addEventListener("click",(event)=>{
     navbarItem.forEach(item => item.classList.remove("active"))
     event.target.classList.add("active")
+})
+
+
+//7 마지막 반응형을 위해서 medea
+
+const navbarToggleBtn = document.querySelector(".navbar__toggleBtn")
+const navbarulMenu = document.querySelector("ul.navbar__menu")
+navbarToggleBtn.addEventListener('click',(event) =>{
+    navbarMenu.classList.toggle("active")
+    navbarulMenu.classList.toggle("active")
 })

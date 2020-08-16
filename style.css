@@ -138,7 +138,7 @@ p {
     border: 1px solid var(--color-white);
 }
 
-.navbar__togleBtn{
+.navbar__toggleBtn{
     /* display: none; */
     position: absolute;
     right: 32px;
@@ -146,6 +146,8 @@ p {
     top: 46px;
     color: var(--color-white);
     display: none;
+    width: 70px;
+    height: 70px;
 }
 
 /* Home Styling */
@@ -296,7 +298,7 @@ p {
 }
 .skill__value{
     height: 3px;
-    color: var(--color-orange);
+    background-color: var(--color-orange);
 }
 .tools,
 .etc{
@@ -405,19 +407,19 @@ p {
 }
 
 .project__description h3{
-    color:var(--color-white)
+    color:var(--color-orange)
 }
 /* 줄넣기 이건 처음해보는것 */
 /* h3에 다음에 선 넣기  */
 .project__description h3::after{
     display: block;
     content: '';
-    width: 25px;
+    width: 100px;
     height: 2px;
     background-color: var(--color-white);
     position: relative;
     left: 50%;
-    margin-left: -12px;
+    transform: translateX(-50%);
     margin-top: 8px;
 }
 
@@ -467,11 +469,14 @@ p {
 }
 
 @media screen and (max-width:768px){
-    .navbar__togleBtn{
+    .navbar__toggleBtn{
         display: block;
     }
     #navbar{
         flex-direction: column;
+    }
+    #navbar.navbar--dark{
+        padding: 0px;
     }
     .navbar__log{
         align-self: flex-start;
@@ -480,6 +485,24 @@ p {
         flex-direction: column;
         display: none;
     }
+    .navbar__menu.active{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        background-color: #fa5788;
+    }
+    .navbar__item{
+        width: 100%;
+        text-align: center;
+    }
+    .navbar__item.active{
+        border : none;
+    }
+    .navbar__item:hover{
+        border:1px solid var(--color-white)
+    }
+
+
     .about__majors{
         flex-direction: column;
         align-items: center;
