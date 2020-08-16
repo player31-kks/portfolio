@@ -96,8 +96,11 @@ p {
     /* background-color: #e84393; */
     background-color: transparent;
     color: white;
-    padding: 16px;
+    padding: 10px 0px;
     transition: all var(--animation-duration) ease-in;
+    /* 이거는 복습 몰랐엉 ㅜㅜ*/
+    z-index: 1;
+
 }
 
 #navbar.navbar--dark{
@@ -117,6 +120,7 @@ p {
 }
 .navbar__menu{
     display: flex;
+    padding-right: 10px;
 
 }
 .navbar__item:hover{
