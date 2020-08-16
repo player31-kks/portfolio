@@ -67,3 +67,32 @@ document.addEventListener('scroll',event=>{
         GlobalBtn.classList.remove("active")
     }
 })
+
+//5 work 누르면 
+
+function ClickWorkHanddler(event){
+    const categorieName = event.target.dataset.name
+    // all 이면 다 보여지기
+    if(categorieName==="all"){
+        works.forEach(work =>work.classList.remove("invisiable"))
+        return;
+    }
+    projectContainer.classList.add("anime-out")
+    // 
+    setTimeout(() => {
+        works.forEach((work) =>{
+            if(work.dataset.name ===categorieName){
+                work.classList.remove('invisiable')
+            }else{
+                work.classList.add('invisiable')
+            }
+        }) 
+        projectContainer.classList.remove("anime-out")
+    }, 300);
+
+}
+const workCategories = document.querySelector(".work__categories")
+const works  = document.querySelectorAll(".project")
+const projectContainer = document.querySelector(".work__projects")
+
+workCategories.addEventListener('click',ClickWorkHanddler)

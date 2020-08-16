@@ -328,7 +328,8 @@ p {
 .categories__btn.active .category__count,
 .categories__btn:hover .category__count{
     opacity: 1;
-    top:0
+    top:0;
+    pointer-events: none;
 }
 .category__count{
     background-color: var(--color-orange);
@@ -342,14 +343,21 @@ p {
     position: relative;
     top:-20px;
     left: 4px;
-    opacity: 0;
+    opacity: 1;
     transition: all var(--animation-duration) ease-in;
+    
 }
 
 .work__projects{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    opacity: 1;
+    transition: all var(--animation-duration) ease-out;
+}
+.work__projects.anime-out{
+    opacity: 0;
+    transform: scale(0.96) translateY(40px);
 }
 
 .project{
@@ -363,6 +371,11 @@ p {
     justify-content: center;
     align-items: center;
 }
+
+.project.invisiable{
+    display: none;
+}
+
 .project__img{
     /* 그림이 자신의 통안에서만 커질수 있게 하기위함이다.  */
     max-width: 100%;
