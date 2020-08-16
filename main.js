@@ -68,20 +68,22 @@ document.addEventListener('scroll',event=>{
     }
 })
 
-//5 work 누르면 
+//5 work 누르면 내가 원하는것만 볼 수 있게 하기 
 
 function ClickWorkHanddler(event){
     const categorieName = event.target.dataset.name
-    // all 이면 다 보여지기
-    if(categorieName==="all"){
-        works.forEach(work =>work.classList.remove("invisiable"))
-        return;
-    }
+    //animation 주기 전에 버튼 처리 : 이전꺼를 찾아서 그것만 없애준다.
+    const previous=document.querySelector(".categories__btn.active")
+    previous.classList.remove("active")
+    //현재꺼에 active 추가해주기
+    event.target.classList.add("active")
+
+    //나머지는 애니메이션 주기 
     projectContainer.classList.add("anime-out")
     // 
     setTimeout(() => {
         works.forEach((work) =>{
-            if(work.dataset.name ===categorieName){
+            if(work.dataset.name ===categorieName || categorieName==="all"){
                 work.classList.remove('invisiable')
             }else{
                 work.classList.add('invisiable')
@@ -94,5 +96,12 @@ function ClickWorkHanddler(event){
 const workCategories = document.querySelector(".work__categories")
 const works  = document.querySelectorAll(".project")
 const projectContainer = document.querySelector(".work__projects")
-
 workCategories.addEventListener('click',ClickWorkHanddler)
+
+
+//6 list를 누르게 되면 그때 버튼을 active하게 변화하기(쉽징)
+const navbarItem = document.querySelectorAll(".navbar__item")
+navbarMenu.addEventListener("click",(event)=>{
+    navbarItem.forEach(item => item.classList.remove("active"))
+    event.target.classList.add("active")
+})
