@@ -433,6 +433,26 @@ p {
     color: var(--color-yellow);
 }
 
+.Global__Btn{
+    font-size: 50px;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color:var(--color-pink);
+    color: var(--color-white);
+    border-radius: 50%;
+    opacity: 0;
+    /* display none을 이용하게 되면 transition이 되기 어려움 그래서 이때는 opacity */
+    pointer-events: none;
+    transition: opacity 300ms ease-in;
+}
+.Global__Btn.active{
+    opacity: 1;
+    pointer-events:auto;
+}
+
 @media screen and (max-width:768px){
     .navbar__togleBtn{
         display: block;

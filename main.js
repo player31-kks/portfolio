@@ -54,3 +54,16 @@ document.addEventListener('scroll',event =>{
     const opacity = 1-(size/Homeheight)
     Home.style.opacity = opacity
 })
+
+//4. button 생성 navbarHeight 이용
+const GlobalBtn = document.querySelector(".Global__Btn")
+GlobalBtn.addEventListener("click",scrollIntoView)
+
+document.addEventListener('scroll',event=>{
+    const size = window.scrollY
+    if(size > navbarHeight)
+        GlobalBtn.classList.add("active")
+    else{
+        GlobalBtn.classList.remove("active")
+    }
+})
