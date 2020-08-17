@@ -181,9 +181,12 @@ p {
     margin: var(--base-Margin) 0px;
     padding: 8px 12px;
 }
+.Home__contact:hover{
+    background-color: var(--color-dark-pink);
+}
 /* Section Common */
 .section{
-    padding:50px;
+    padding:100px;
     text-align: center;
     margin: auto;
 }
@@ -318,7 +321,7 @@ p {
     border-radius: var(--size-border-radius);
     font-size: var(--font-regular);
     padding: 8px 48px;
-
+    position: relative;
 }
 .categories__btn.active,
 .categories__btn:hover{
@@ -330,7 +333,7 @@ p {
 .categories__btn.active .category__count,
 .categories__btn:hover .category__count{
     opacity: 1;
-    top:0;
+    top:5px;
     pointer-events: none;
 }
 .category__count{
@@ -342,10 +345,10 @@ p {
     display: inline-block;
     line-height: 24px;
     /* 프로젝트하면서 relative 처음 써봄 */
-    position: relative;
+    position: absolute;
     top:-20px;
-    left: 4px;
-    opacity: 1;
+    right: 8px;
+    opacity: 0;
     transition: all var(--animation-duration) ease-in;
     
 }
@@ -469,8 +472,22 @@ p {
 }
 
 @media screen and (max-width:768px){
+    :root{
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+    }
+    .section{
+        padding:16px;
+        padding-top: 80px;
+    }
     .navbar__toggleBtn{
         display: block;
+        top:16px;
+        right: 16px;
+        font-size: var(--font-medium);
     }
     #navbar{
         flex-direction: column;
@@ -506,6 +523,8 @@ p {
     .about__majors{
         flex-direction: column;
         align-items: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     .major{
         margin: var(--base-Margin);
@@ -516,5 +535,16 @@ p {
     .project{
         /* 이부분 공부하기 아직 flex-grow랑 shrink잘 모름 */
         flex-grow: 1;
+    }
+    .categories__btn{
+        margin: 4px 0;
+        width: 100%;
+    }
+    .Global__Btn{
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        bottom: 16px;
+        right: 16px;
     }
 }
